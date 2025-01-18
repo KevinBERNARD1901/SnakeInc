@@ -5,7 +5,6 @@ import java.util.Objects;
 import lombok.Getter;
 import org.snakeinc.snake.GamePanel;
 
-
 @Getter
 public class Tile {
 
@@ -46,7 +45,7 @@ public class Tile {
     }
 
     public boolean isInsideGame() {
-        return (((x > 0) && (x < GamePanel.N_TILES_X)) && ((y > 0) && (y < GamePanel.N_TILES_Y)));
+        return (((x >= 0) && (x < GamePanel.N_TILES_X)) && ((y >= 0) && (y < GamePanel.N_TILES_Y)));
     }
 
     @Override

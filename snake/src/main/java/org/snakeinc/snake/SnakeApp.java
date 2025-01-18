@@ -9,8 +9,8 @@ public class SnakeApp {
         GamePanel gamePanel = new GamePanel();
 
         frame.add(gamePanel);
+        frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(GamePanel.GAME_WIDTH, GamePanel.GAME_HEIGHT);
         frame.setVisible(true);
         frame.setResizable(false);
     }

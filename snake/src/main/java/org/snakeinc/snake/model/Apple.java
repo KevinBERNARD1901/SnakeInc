@@ -6,26 +6,16 @@ import java.util.Random;
 import lombok.Getter;
 import org.snakeinc.snake.GamePanel;
 
-public class Apple {
+public class Apple extends Aliment {
 
-    @Getter
-    private Tile position;
-    private final Random random;
-
-    public Apple() {
-        random = new Random();
-        updateLocation();
+    @Override
+    protected Color getColor() {
+        return Color.RED;
     }
 
-    public void updateLocation() {
-        position = new Tile(random.nextInt(0, (GamePanel.GAME_WIDTH / GamePanel.TILE_SIZE)),
-                random.nextInt(0, (GamePanel.GAME_HEIGHT / GamePanel.TILE_SIZE)));
-
-    }
-
-    public void draw(Graphics g) {
-        g.setColor(Color.RED);
-        position.drawOval(g);
+    public int beEatenBy(Snake snake, int score) {
+        score = snake.eat(this, score);
+        return score;
     }
 
 }
